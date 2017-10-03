@@ -1,13 +1,8 @@
 require 'rubygems'
 require 'twilio-ruby'
 require 'sinatra'
-require 'logger'
 
 get '/' do
-  logger.level = Logger::DEBUG
-  logger.debug "Handling 'hello world' request."
-  logger.info "Hello world."
-
   return "<h1>Hello World</h1>"
 end
 
