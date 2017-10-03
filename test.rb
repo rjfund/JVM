@@ -2,12 +2,6 @@ require 'rubygems'
 require 'twilio-ruby'
 require 'sinatra'
 
-get '/' do
-  puts 'helllllooo'*5
-  return "<h1>Hello World</h1>"
-end
-
-
 get '/hello-monkey' do
 
   Twilio::TwiML::VoiceResponse.new do |r|
@@ -22,7 +16,6 @@ end
 get '/record-it' do
   Twilio::TwiML::VoiceResponse.new do |r|
     r.say('Listen to your message.')
-    r.play(params['RecordingUrl'])
     puts params
     r.say('Goodbye.')
   end.to_s
