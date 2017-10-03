@@ -11,14 +11,14 @@ get '/hello-monkey' do
     r.say("start your message")
     r.record(action: '/record-it', method: 'get', finish_on_key: '*')
   end.to_s
-
-  get '/record-it' do
-    Twilio::TwiML::VoiceResponse.new do |r|
-      r.say('Listen to your message.')
-      r.play(params['RecordingUrl'])
-      puts params
-      r.say('Goodbye.')
-    end.to_s
-  end
-
 end
+
+get '/record-it' do
+  Twilio::TwiML::VoiceResponse.new do |r|
+    r.say('Listen to your message.')
+    r.play(params['RecordingUrl'])
+    puts params
+    r.say('Goodbye.')
+  end.to_s
+end
+
