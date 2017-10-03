@@ -8,7 +8,17 @@ get '/' do
 end
 
 get '/hello-monkey' do
+  people = {
+    '+17078476844' => 'Cooper Mayne',
+    '+14158675310' => 'Boots',
+    '+14158675311' => 'Virgil',
+    '+14158675312' => 'Marcel',
+  }
+
+  name = people[params['From']] || 'Monkey'
+
   Twilio::TwiML::VoiceResponse.new do |r|
-    r.say 'Hello Monkey'
+    r.say("Hello #{name}")
   end.to_s
+
 end
