@@ -6,8 +6,9 @@ get '/hello-monkey' do
 
   Twilio::TwiML::VoiceResponse.new do |r|
     r.say("Hello Cooper")
-    r.pause(length: 10)
-    r.play(digits: "5")
+    r.pause(length: 5)
+    r.play(digits: "5555")
+    r.say("I played five five times")
   end.to_s
 
 end
