@@ -16,7 +16,7 @@ end
 get '/record-it' do
   Twilio::TwiML::VoiceResponse.new do |r|
     r.say('Listen to your message.')
-    r.play(params['RecordingUrl'])
+    #r.play(params['RecordingUrl'])
     puts params
     r.say('Goodbye.')
   end.to_s
