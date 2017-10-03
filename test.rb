@@ -8,14 +8,11 @@ get '/' do
 end
 
 
-get '/' do
-
-end
 get '/hello-monkey' do
 
   Twilio::TwiML::VoiceResponse.new do |r|
     r.say("Hello Cooper")
-    r.pause(length: 5)
+    r.pause(length: 2)
     r.play(digits: "5")
     r.say("start your message")
     r.record(action: '/record-it', method: 'get', finish_on_key: '*')
@@ -25,7 +22,7 @@ end
 get '/record-it' do
   Twilio::TwiML::VoiceResponse.new do |r|
     r.say('Listen to your message.')
-    #r.play(params['RecordingUrl'])
+    r.play(params['RecordingUrl'])
     puts params
     r.say('Goodbye.')
   end.to_s
