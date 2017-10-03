@@ -5,6 +5,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     jwt (1.5.6)
     libxml-ruby (3.0.0)
+    logger (1.2.8)
     multipart-post (2.0.0)
     rack (1.6.8)
     sinatra (1.1.0)
@@ -20,6 +21,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  logger
   sinatra (= 1.1.0)
   twilio-ruby
 

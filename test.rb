@@ -1,7 +1,25 @@
 require 'rubygems'
 require 'twilio-ruby'
 require 'sinatra'
+require 'logger'
 
+enable :logging
+
+before do
+  logger.level = Logger::DEBUG
+end
+
+get '/' do
+  logger.debug "Handling 'hello world' request."
+  logger.info "Hello world."
+
+  return "<h1>Hello World</h1>"
+end
+
+
+get '/' do
+
+end
 get '/hello-monkey' do
 
   Twilio::TwiML::VoiceResponse.new do |r|
