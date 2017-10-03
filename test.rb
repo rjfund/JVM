@@ -3,13 +3,8 @@ require 'twilio-ruby'
 require 'sinatra'
 require 'logger'
 
-enable :logging
-
-before do
-  logger.level = Logger::DEBUG
-end
-
 get '/' do
+  logger.level = Logger::DEBUG
   logger.debug "Handling 'hello world' request."
   logger.info "Hello world."
 
