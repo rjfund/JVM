@@ -3,6 +3,7 @@ require 'twilio-ruby'
 require 'sinatra'
 
 get '/' do
+  puts 'helllllooo'*5
   return "<h1>Hello World</h1>"
 end
 
