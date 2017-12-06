@@ -10,7 +10,7 @@ get '/hello-monkey' do
   Twilio::TwiML::VoiceResponse.new do |r|
     r.pause(length: 2)
     r.play(digits: "5")
-    r.say("This is the voicemail box for Peter Borenstein")
+    r.say("This is the voicemail box for Peter Borenstein. Start your message after the tone.")
     r.record(action: 'http://court-tracker.herokuapp.com/voice_messages', method: 'post', finish_on_key: '*')
   end.to_s
 end
