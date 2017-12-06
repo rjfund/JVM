@@ -1,15 +1,22 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    coderay (1.1.1)
     faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
     jwt (1.5.6)
     libxml-ruby (3.0.0)
+    method_source (0.8.2)
     multipart-post (2.0.0)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.6.8)
     sinatra (1.1.0)
       rack (~> 1.1)
       tilt (~> 1.1)
+    slop (3.6.0)
     tilt (1.4.1)
     twilio-ruby (5.3.0)
       faraday (~> 0.9)
@@ -20,6 +27,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  pry
   sinatra (= 1.1.0)
   twilio-ruby
 
