@@ -8,14 +8,13 @@ require 'pry'
 
 get '/hello-monkey' do
   Twilio::TwiML::VoiceResponse.new do |r|
-    r.say("hello")
     #r.pause(length: 25)
-    r.pause(length: 5)
+    r.pause(length: 1)
     r.play(digits: "5")
     r.pause(length: 2)
-    r.say("This is the voicemail box for Peter Borenstein. Start your message after the tone.")
+    r.play("https://s3.amazonaws.com/cooper.storage/message.mp3")
     r.pause(length: 1)
-    r.record(action: 'http://court-tracker.herokuapp.com/voice_messages', method: 'post', finish_on_key: '*')
+    r.record(action: 'http://court-tracker.herokuapp.com/voice_messages', method: 'post', finish_on_key: '*', max_length: 120 )
   end.to_s
 end
 
