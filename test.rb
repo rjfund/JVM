@@ -9,7 +9,8 @@ require 'pry'
 get '/hello-monkey' do
   Twilio::TwiML::VoiceResponse.new do |r|
     r.say("hello")
-    r.pause(length: 25)
+    #r.pause(length: 25)
+    r.pause(length: 5)
     r.play(digits: "5")
     r.pause(length: 2)
     r.say("This is the voicemail box for Peter Borenstein. Start your message after the tone.")
