@@ -9,8 +9,8 @@ require 'pry'
 get '/hello-monkey' do
   Twilio::TwiML::VoiceResponse.new do |r|
 
+    r.say("hello?")
     r.pause(length: 25)
-    #r.pause(length: 1)
     r.play(digits: "5")
     r.pause(length: 2)
     r.play(url: "https://s3.amazonaws.com/cooper.storage/message.mp3")
