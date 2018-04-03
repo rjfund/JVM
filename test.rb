@@ -12,7 +12,7 @@ get '/hello-monkey' do
     r.pause(length: 1)
     r.play(digits: "5")
     r.pause(length: 2)
-    r.play(url: "https://s3.amazonaws.com/cooper.storage/message.mp3")
+    #r.play(url: "https://s3.amazonaws.com/cooper.storage/message.mp3")
     r.pause(length: 1)
     r.record(action: 'http://court-tracker.herokuapp.com/voice_messages', method: 'post', finish_on_key: '*', max_length: 120 )
   end.to_s
