@@ -13,6 +13,8 @@ get '/hello-monkey' do
     r.pause(length: 25)
     r.play(digits: "5")
     r.pause(length: 2)
+    r.dial do |dial|
+      dial.number('213-454-0980')
     r.play(url: "https://s3.amazonaws.com/cooper.storage/message.mp3")
     r.pause(length: 1)
     r.say("please Record your message after the tone.")
